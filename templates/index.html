@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qarz Daftari</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts va Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Dashboard / Umumiya Ma'lumot -->
+        <header>
+            <h1><i class="fa-solid fa-book-bookmark"></i> Qarz Daftari</h1>
+            <div class="total-balance">
+                <span>Umumiy qarz:</span>
+                <span id="totalAmount">0 UZS</span>
+            </div>
+        </header>
+
+        <!-- Qarz qo'shish formasi -->
+        <section class="form-section">
+            <form id="debtForm">
+                <div class="input-group">
+                    <label for="name"><i class="fa-solid fa-user"></i> Ism</label>
+                    <input type="text" id="name" placeholder="Kimdan yoki kimga?" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="amount"><i class="fa-solid fa-money-bill-wave"></i> Summa (UZS)</label>
+                    <input type="number" id="amount" placeholder="Miqdorni kiriting" min="1" required>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fa-solid fa-plus"></i> Ro'yxatga qo'shish
+                </button>
+            </form>
+        </section>
+
+        <!-- Qarzdorlar ro'yxati -->
+        <section class="list-section">
+            <h2><i class="fa-solid fa-list-ul"></i> Amaldagi qarzlar</h2>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search" placeholder="Ism bo'yicha qidirish...">
+            </div>
+            <ul id="debtList" class="debt-list">
+                <!-- JS orqali qarzlar shu yerga tushadi -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
