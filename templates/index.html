@@ -19,6 +19,11 @@
                 <span>Umumiy qarz:</span>
                 <span id="totalAmount">0 UZS</span>
             </div>
+
+            <button id="exportBtn" class="btn-export">
+                <i class="fa-solid fa-file-excel"></i>
+                Excelga yuklash
+            </button>
         </header>
 
         <!-- Qarz qo'shish formasi -->
@@ -47,6 +52,12 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" id="search" placeholder="Ism bo'yicha qidirish...">
             </div>
+
+            <div class="trash-box">
+                <h3><i class="fa-solid fa-trash"></i> Korzinka</h3>
+                <div id="trashList"></div>
+            </div>
+
             <ul id="debtList" class="debt-list">
                 <!-- JS orqali qarzlar shu yerga tushadi -->
             </ul>
